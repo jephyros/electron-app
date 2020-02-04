@@ -1,6 +1,7 @@
 const { app,BrowserWindow,ipcMain} = require('electron');
 
-app.on('ready',()=>{
+
+function createWindow(){
     const win = new BrowserWindow({
         width:1024,
         height:768,
@@ -11,6 +12,21 @@ app.on('ready',()=>{
 
     win.loadFile("index.html");
     console.log('main!');
+}
+
+app.on('window-all-closed',()=>{
+    if(process.platform != 'darwin'){
+        app.quit();
+    }
+});
+
+
+
+app.on('ready',()=>{
+    createWindow();
+});
+app.on('activate',()=>{
+    createWindow();
 });
 
 ipcMain.on('handle-click',(event,arg)=>{
