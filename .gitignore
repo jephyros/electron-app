@@ -1,7 +1,9 @@
 .evn.local
 .DS_Store
 node_modules
+/awscert
 /dist
+
 
 
 # local env files

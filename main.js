@@ -1,6 +1,7 @@
 const { app,BrowserWindow,ipcMain} = require('electron');
 
 
+
 function createWindow(){
     const win = new BrowserWindow({
         width:1024,
@@ -11,7 +12,10 @@ function createWindow(){
     });
 
     win.loadFile("index.html");
-    console.log('main!');
+    // 개발자 도구를 엽니다.
+    win.webContents.openDevTools()
+    
+    console.log('main:');
 }
 
 app.on('window-all-closed',()=>{
