@@ -27,6 +27,8 @@ app.on('window-all-closed',()=>{
 
 
 app.on('ready',()=>{
+    
+    
     createWindow();
 });
 app.on('activate',()=>{

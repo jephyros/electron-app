@@ -1,5 +1,6 @@
-const {ipcRenderer} = require('electron');
+//const {ipcRenderer} = require('electron');
 var awsIot = require('aws-iot-device-sdk');
+const { Manager } = require('buildthing-beacon-sdk');
 
 //jquery
 window.$ = window.jQuery = require('jquery');
@@ -53,3 +54,18 @@ window.handleClick = ()=>{
     // $("#deviceid").html('장비번호 : '+ deviceId );
     
 }
+
+
+window.addEventListener("load", function(event) {
+     var bleManager = new Manager()
+  
+    // bleManager.on('discover', function(beacon) {
+    //   console.log(beacon)
+    // })
+  
+    // bleManager._ble.on('stateChange', function (state) {
+    //   if(state[0] === 'poweredOn') bleManager.startScan()
+    // })
+  
+    // window.bleManager = bleManager
+  });
